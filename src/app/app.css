@@ -113,6 +113,7 @@ ul.projects li {
 }
 
 ul.projects li::before {
+  content: '▹';
   position: absolute;
   left: 0;
   color: #6b9dcc;
@@ -202,6 +203,95 @@ button:focus-visible {
   letter-spacing: 0.3px;
   text-transform: none;
 }
+
+/* ADDED FOR PREACT-04 */
+
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding: 12px 32px;
+  background: linear-gradient(135deg, #245b91, #4a86c0);
+  box-shadow: 0 4px 14px rgba(36, 91, 145, 0.25);
+}
+
+.brand {
+  color: #ffffff;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.brand:hover {
+  opacity: 0.85;
+}
+
+.topnav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+}
+
+.topnav ul a {
+  display: block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  color: #e8f1fa;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.topnav ul a:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+}
+
+.topnav ul a.active {
+  background: #ffffff;
+  color: #245b91;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.topnav ul a:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  .topnav {
+    padding: 12px 18px;
+  }
+
+  .resume {
+    margin: 12px;
+    padding: 20px;
+  }
+
+  section {
+    padding: 16px;
+  }
+
+  ul.projects {
+    grid-template-columns: 1fr;
+  }
+
+  .intro h1 {
+    font-size: 1.7rem;
+  }
+}
+
 
 @media (max-width: 600px) {
   .resume {

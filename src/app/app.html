@@ -1,121 +1,16 @@
-<main class="resume">
-  <app-header
-    [fullName]="fullName"
-    [location]="location"
-    [email]="email"
-    [phone]="phone"
-    [profile]="profile" />
+<nav class="topnav">
+  <a class="brand" routerLink="/">My CV</a>
+  <ul>
+    <li>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    </li>
+    <li>
+      <a routerLink="/data-binding" routerLinkActive="active">Data Binding</a>
+    </li>
+    <li>
+      <a routerLink="/directives" routerLinkActive="active">Directives</a>
+    </li>
+  </ul>
+</nav>
 
-  <app-profile-card />
-
-  <section>
-    <h2>Education</h2>
-    <div class="edu-header">
-      <h3>{{ education }}</h3>
-      <span class="edu-date">{{ educationYears }}</span>
-    </div>
-    <p class="edu-school">
-      {{ school }}
-      <span class="edu-location">· {{ schoolLocation }}</span>
-    </p>
-  </section>
-
-  <app-skills
-    [skills]="skills"
-    (skillSelected)="onSkillSelected($event)" />
-
-  <section>
-    <h2>Projects</h2>
-    <ul class="projects">
-      @for (project of projects; track project) {
-        <li>{{ project }}</li>
-      }
-    </ul>
-  </section>
-
-  <section class="interaction">
-    <h2 class="section-title">Angular Interaction</h2>
-    <p>{{ message }}</p>
-  </section>
-
-  <app-footer
-    [fullName]="fullName"
-    [proficiencies]="proficiencies" />
-</main>/>
-
-  <!--
-  <section>
-    <h2>Key Skills</h2>
-    <ul>
-      @for (skill of skills; track skill) {
-        <li>{{ skill }}</li>
-      }
-    </ul>
-  </section>
-
-  <section class="interaction">
-    <h2>Angular Interaction</h2>
-    <p>{{ message }}</p>
-    <button (click)="showMessage()">Click Me</button>
-  </section>
-
-  <app-footer />
-</main>
-
-  <header class="intro">
-    <h1>{{ fullName }}</h1>
-    <p>
-      {{ location }} |
-      {{ phone }} |
-      <a [href]="'mailto:' + email">{{ email }}</a>
-    </p>
-  </header>
-
-  <section class="summary">
-    <h2>Personal Profile</h2>
-    <p>{{ profile }}</p>
-  </section>
-
-  <app-profile-card></app-profile-card>
-
-  <app-skills />
-
-  <section>
-    <h2>Education</h2>
-    <div class="edu-header">
-      <h3>{{ education }}</h3>
-      <span class="edu-date">{{ educationYears }}</span>
-    </div>
-    <p class="edu-school">
-      {{ school }}
-      <span class="edu-location">· {{ schoolLocation }}</span>
-    </p>
-  </section>
-
-  <section>
-    <h2>Key Skills</h2>
-    <ul class="skills">
-      @for (skill of skills; track skill) {
-        <li>{{ skill }}</li>
-      }
-    </ul>
-  </section>
-
-  <section>
-    <h2>Projects</h2>
-    <ul class="projects">
-      @for (project of projects; track project) {
-        <li>{{ project }}</li>
-      }
-    </ul>
-  </section>
-
-  <section class="interaction">
-    <h2>Angular Interaction</h2>
-    <p>{{ message }}</p>
-    <button (click)="showMessage()">Click Me</button>
-  </section>
-
-  <app-footer />
-</main>
--->
+<router-outlet />
